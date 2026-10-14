@@ -17,6 +17,25 @@ os.makedirs(OUT_DIR, exist_ok=True)
 with open(SLUGS_FILE) as f:
     slugs = [l.strip() for l in f if l.strip()]
 
+META_PIXEL = """<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1123440759675501');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1123440759675501&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+"""
+
 PAGE_TEMPLATE = """<!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +48,7 @@ PAGE_TEMPLATE = """<!doctype html>
   html,body{{margin:0;padding:0;background:#000;}}
   * {{ box-sizing: border-box; }}
 </style>
-</head>
+{meta_pixel}</head>
 <body class="{body_class}">
 {main_content}
 </body>
@@ -74,6 +93,7 @@ for slug in slugs:
         slug=slug,
         body_class=html.escape(body_class),
         main_content=main_content,
+        meta_pixel=META_PIXEL,
     )
 
     page_dir = os.path.join(OUT_DIR, slug)
