@@ -26,7 +26,9 @@
     background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 72%,rgba(0,0,0,.55) 100%);}
   .hw-hero__logo{position:absolute;z-index:4;top:28px;left:40px;width:150px;height:auto;}
   .hw-hero__sticker{display:none;}
-  .hw-hero__cta-wrap{position:absolute;z-index:6;left:50%;top:27%;transform:translateX(-50%);text-align:center;}
+  /* The whole banner is one big link to the sale; the button sits on top of it */
+  .hw-hero__link{position:absolute;inset:0;z-index:7;}
+  .hw-hero__cta-wrap{position:absolute;z-index:8;left:50%;top:27%;transform:translateX(-50%);text-align:center;}
   .hw-hero__cta{display:inline-block;padding:15px 46px;border-radius:999px;text-decoration:none;font-weight:800;font-size:21px;letter-spacing:.01em;color:#fff;
     background:linear-gradient(90deg,#eb4687,#f08a35);box-shadow:0 8px 24px rgba(0,0,0,.35);animation:hw-ember 2.8s ease-in-out infinite;transition:transform .2s;}
   .hw-hero__cta:hover{transform:translateY(-2px);}
@@ -70,6 +72,7 @@ src="https://www.facebook.com/tr?id=1123440759675501&ev=PageView&noscript=1"
   <div class="hw-hero__shade"></div>
   <img class="hw-hero__logo" src="https://cdn.shopify.com/s/files/1/0968/2337/8203/files/ThrillOween_Logo_White.png?v=1793086619&width=400" alt="Thrillerrr" width="914" height="422">
   <img class="hw-hero__sticker" src="https://cdn.shopify.com/s/files/1/0968/2337/8203/files/ThrillOween_40_Sticker.webp?v=1793086619&width=400" alt="Up to 40% off sitewide" width="1036" height="1026">
+  <a class="hw-hero__link" href="https://www.thrillerrr.in/collections/massager" aria-label="Shop the ThrillOween sale"></a>
   <h1 class="sr-only">ThrillOween Sale: up to 40% off sitewide</h1>
   <div class="hw-hero__cta-wrap">
     <a class="hw-hero__cta" href="https://www.thrillerrr.in/collections/massager">Shop the Sale</a>
